@@ -18,17 +18,12 @@ def get_final_grade():
             mult = 0.15
         elif c["name"] == "Project Part 2":
             mult = 0.25
-        if c["grade"] == "?":
-            min_final += 0
-            max_final += c["maxGrade"] * mult
-        else:
+        if c["grade"] != "?":
             min_final += c["grade"] * mult
-            max_final += c["grade"] * mult
+            max_final += c["maxGrade"] * mult
     min_final = round(min_final, 1)
     max_final = round(max_final, 1)
-    if min_final == max_final:
-        return min_final
-    return f"{min_final} - {max_final}"
+    return f"{min_final} / {max_final}"
 
 
 def get_all_grades():
