@@ -1,80 +1,16 @@
 [
   {
-    "names": ["Programacao Competitiva", "Competitive Programming", "CP", "PC"],
+    "names": ["Programacao Competitiva", "Competitive Programming", "PC"],
+    "module_name": "pc",
     "year": 2,
     "semester": 1,
-    "maxGrade": 20,
-    "evalComponents": [
-      {
-        "name": "Submitted Implementations",
-        "weight": 0.5,
-        "maxGrade": 100,
-        "evalComponents": [
-          {
-            "name": "Problem Set 1",
-            "weight": 0.12,
-            "maxGrade": 100
-          },
-          {
-            "name": "Problem Set 2",
-            "weight": 0.12,
-            "maxGrade": 100
-          },
-          {
-            "name": "Problem Set 3",
-            "weight": 0.12,
-            "maxGrade": 100
-          },
-          {
-            "name": "Problem Set 4",
-            "weight": 0.12,
-            "maxGrade": 100
-          },
-          {
-            "name": "Problem Set 5",
-            "weight": 0.12,
-            "maxGrade": 100
-          },
-          {
-            "name": "Problem Set 6",
-            "weight": 0.12,
-            "maxGrade": 100
-          },
-          {
-            "name": "Problem Set 7",
-            "weight": 0.12,
-            "maxGrade": 100
-          },
-          {
-            "name": "Problem Set 8",
-            "weight": 0.12,
-            "maxGrade": 100
-          },
-          {
-            "name": "Problem Set 9",
-            "weight": 0.12,
-            "maxGrade": 100
-          },
-          {
-            "name": "Problem Set 10",
-            "weight": 0.12,
-            "maxGrade": 100
-          }
-        ]
-      },
-      {
-        "name": "Competitive Events",
-        "weight": 0.3,
-        "maxGrade": 100,
-        "evalComponents": []
-      },
-      {
-        "name": "Presentations and Class Participation",
-        "weight": 0.2,
-        "maxGrade": 100,
-        "evalComponents": [],
-        "grade": "?"
-      }
-    ]
+    "maxGrade": 20
+  },
+  {
+    "names": ["Redes de Comunicacao", "Communication Networks", "RC"],
+    "module_name": "rc",
+    "year": 3,
+    "semester": 1,
+    "maxGrade": 20
   }
 ]

@@ -1,5 +1,18 @@
 import json
 from icecream import ic
+from pc import (
+    get_final_grade as pc_get_final_grade,
+    get_all_grades as pc_get_all_grades,
+)
+from rc import (
+    get_final_grade as rc_get_final_grade,
+    get_all_grades as rc_get_all_grades,
+)
+
+grade_functions = {
+    "pc": [pc_get_final_grade, pc_get_all_grades],
+    "rc": [rc_get_final_grade, rc_get_all_grades],
+}
 
 
 def get_data():
@@ -16,22 +29,14 @@ def get_course_by_name(query, data):
     return None
 
 
-def get_grade(course):
-    string = course["names"][0]
+def get_final_grade(course):
+    if course["module_name"] in grade_functions:
+        return grade_functions[course["module_name"]][0]()
 
 
-def get_all_grades(data):
-    grades = []
-    if not "evalComponents" in data:
-        return []
-    for component in data["evalComponents"]:
-        if "grade" in component:
-            grades.append(
-                f"{component["name"]}: {component["grade"]} / {component["maxGrade"]}"
-            )
-        else:
-            grades += get_all_grades(component)
-    return grades
+def get_all_grades(course):
+    if course["module_name"] in grade_functions:
+        return grade_functions[course["module_name"]][1]()
 
 
 def shell():
@@ -57,8 +62,10 @@ def shell():
             print("Available commands:")
             print("  courses - list all courses")
             print("  course <course_name> - show course details")
-            print("  grades - show calculated grades for all courses")
-            print("  grades <course_name> - show grades for a course")
+            print("  grades - show all grades for all courses")
+            print("  grades <course_name> - show all grades for a course")
+            print("  final all - show final grade for all courses")
+            print("  final <course_name> - show final grade for a course")
             print("  exit - exit the shell")
 
         # > courses
@@ -81,7 +88,8 @@ def shell():
             # > grades
             if len(command) == 1:
                 for course in data:
-                    print(get_grade(course))
+                    print(course["names"][0] + ":")
+                    print(get_all_grades(course))
 
             # > grades <course_name>
             else:
@@ -89,7 +97,21 @@ def shell():
                 if not course:
                     print(f"Course {command[1]} not found.")
                 else:
-                    ic(get_all_grades(course))
+                    print(course["names"][0] + ":")
+                    print(get_all_grades(course))
+
+        elif command[0] == "final":
+            # > final all
+            if len(command) == 2 and command[1] == "all":
+                for course in data:
+                    print(f"{course['names'][0]}: {get_final_grade(course)}")
+            # > final <course_name>
+            elif len(command) == 2:
+                course = get_course_by_name(command[1], data)
+                if not course:
+                    print(f"Course {command[1]} not found.")
+                else:
+                    print(f"{course['names'][0]}: {get_final_grade(course)}")
 
         else:
             print("Invalid command. Use 'help' to see available commands.")
