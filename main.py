@@ -1,5 +1,14 @@
 import json
 from icecream import ic
+
+from comp import (
+    get_final_grade as comp_get_final_grade,
+    get_all_grades as comp_get_all_grades,
+)
+from lc import (
+    get_final_grade as lc_get_final_grade,
+    get_all_grades as lc_get_all_grades,
+)
 from pc import (
     get_final_grade as pc_get_final_grade,
     get_all_grades as pc_get_all_grades,
@@ -8,10 +17,17 @@ from rc import (
     get_final_grade as rc_get_final_grade,
     get_all_grades as rc_get_all_grades,
 )
+from tw import (
+    get_final_grade as tw_get_final_grade,
+    get_all_grades as tw_get_all_grades,
+)
 
 grade_functions = {
+    "comp": [comp_get_final_grade, comp_get_all_grades],
+    "lc": [lc_get_final_grade, lc_get_all_grades],
     "pc": [pc_get_final_grade, pc_get_all_grades],
     "rc": [rc_get_final_grade, rc_get_all_grades],
+    "tw": [tw_get_final_grade, tw_get_all_grades],
 }
 
 

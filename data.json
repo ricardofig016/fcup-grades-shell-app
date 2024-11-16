@@ -1,16 +1,32 @@
 [
   {
+    "names": ["Compiladores", "Compilers", "Comp"],
+    "module_name": "comp",
+    "year": 3,
+    "semester": 1
+  },
+  {
+    "names": ["Logica Computacional", "Computational Logic", "LC"],
+    "module_name": "lc",
+    "year": 2,
+    "semester": 1
+  },
+  {
     "names": ["Programacao Competitiva", "Competitive Programming", "PC"],
     "module_name": "pc",
     "year": 2,
-    "semester": 1,
-    "maxGrade": 20
+    "semester": 1
   },
   {
     "names": ["Redes de Comunicacao", "Communication Networks", "RC"],
     "module_name": "rc",
     "year": 3,
-    "semester": 1,
-    "maxGrade": 20
+    "semester": 1
+  },
+  {
+    "names": ["Tecnologias Web", "Web Technologies", "TW"],
+    "module_name": "tw",
+    "year": 2,
+    "semester": 1
   }
 ]
