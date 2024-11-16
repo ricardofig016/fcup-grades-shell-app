@@ -6,6 +6,12 @@
     "semester": 1
   },
   {
+    "names": ["Interacao Pessoa-Maquina", "Human-Computer Interaction", "IPM"],
+    "module_name": "ipm",
+    "year": 2,
+    "semester": 1
+  },
+  {
     "names": ["Logica Computacional", "Computational Logic", "LC"],
     "module_name": "lc",
     "year": 2,

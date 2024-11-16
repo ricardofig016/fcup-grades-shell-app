@@ -5,6 +5,10 @@ from comp import (
     get_final_grade as comp_get_final_grade,
     get_all_grades as comp_get_all_grades,
 )
+from ipm import (
+    get_final_grade as ipm_get_final_grade,
+    get_all_grades as ipm_get_all_grades,
+)
 from lc import (
     get_final_grade as lc_get_final_grade,
     get_all_grades as lc_get_all_grades,
@@ -24,6 +28,7 @@ from tw import (
 
 grade_functions = {
     "comp": [comp_get_final_grade, comp_get_all_grades],
+    "ipm": [ipm_get_final_grade, ipm_get_all_grades],
     "lc": [lc_get_final_grade, lc_get_all_grades],
     "pc": [pc_get_final_grade, pc_get_all_grades],
     "rc": [rc_get_final_grade, rc_get_all_grades],
