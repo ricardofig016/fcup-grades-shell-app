@@ -13,7 +13,8 @@ def get_final_grade():
             max_final += c["maxGrade"] * 0.5
     min_final = round(min_final, 1)
     max_final = round(max_final, 1)
-    return f"{min_final} / {max_final}"
+    perc = round(min_final * 100 / max_final, 1)
+    return f"{min_final} / {max_final} ({perc}%)"
 
 
 def get_all_grades():

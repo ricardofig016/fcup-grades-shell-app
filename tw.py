@@ -1,6 +1,6 @@
 data = [
     {"name": "Test 1", "grade": 18.5, "maxGrade": 20},
-    {"name": "Test 2", "grade": "?", "maxGrade": 20},
+    {"name": "Test 2", "grade": 9.25, "maxGrade": 20},
     {"name": "Project Part 1", "grade": 18.2, "maxGrade": 20},
     {"name": "Project Part 2", "grade": "?", "maxGrade": 20},
 ]
@@ -23,7 +23,8 @@ def get_final_grade():
             max_final += c["maxGrade"] * mult
     min_final = round(min_final, 1)
     max_final = round(max_final, 1)
-    return f"{min_final} / {max_final}"
+    perc = round(min_final * 100 / max_final, 1)
+    return f"{min_final} / {max_final} ({perc}%)"
 
 
 def get_all_grades():

@@ -26,7 +26,7 @@ evalComponents = [
     {
         "name": "Problem Set 5",
         "item": "Submitted Implementations",
-        "grade": "?",
+        "grade": 85,  # not verified
         "maxGrade": 100,
     },
     {
@@ -68,7 +68,7 @@ evalComponents = [
     {
         "name": "Contest 2",
         "item": "Competitive Events",
-        "grade": "?",
+        "grade": 77,
         "maxGrade": 100,
     },
     {
@@ -136,7 +136,8 @@ def get_final_grade():
     # final grade
     min_final = round((min_si * 0.5 + min_ce * 0.3 + min_pp * 0.2) / 5, 1)
     max_final = round((max_si * 0.5 + max_ce * 0.3 + max_pp * 0.2) / 5, 1)
-    return f"{min_final} / {max_final}"
+    perc = round(min_final * 100 / max_final, 1)
+    return f"{min_final} / {max_final} ({perc}%)"
 
 
 def get_all_grades():
