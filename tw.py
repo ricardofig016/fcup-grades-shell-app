@@ -2,7 +2,8 @@ data = [
     {"name": "Test 1", "grade": 18.5, "maxGrade": 20},
     {"name": "Test 2", "grade": 9.25, "maxGrade": 20},
     {"name": "Project Part 1", "grade": 18.2, "maxGrade": 20},
-    {"name": "Project Part 2", "grade": "?", "maxGrade": 20},
+    {"name": "Project Part 2", "grade": 14, "maxGrade": 20},
+    {"name": "Project Part 3", "grade": 11, "maxGrade": 20},
 ]
 
 
@@ -17,7 +18,9 @@ def get_final_grade():
         elif c["name"] == "Project Part 1":
             mult = 0.15
         elif c["name"] == "Project Part 2":
-            mult = 0.25
+            mult = 0.15
+        elif c["name"] == "Project Part 3":
+            mult = 0.1
         if c["grade"] != "?":
             min_final += c["grade"] * mult
             max_final += c["maxGrade"] * mult

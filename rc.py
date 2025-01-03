@@ -1,6 +1,6 @@
 data = [
     {"name": "Test 1", "grade": 15.8, "maxGrade": 20},
-    {"name": "Test 2", "grade": "?", "maxGrade": 20},
+    {"name": "Test 2", "grade": 17.8, "maxGrade": 20},
     {"name": "Test 3", "grade": "?", "maxGrade": 20},
     {"name": "Project", "grade": "?", "maxGrade": 20},
 ]

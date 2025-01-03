@@ -32,13 +32,13 @@ evalComponents = [
     {
         "name": "Problem Set 6",
         "item": "Submitted Implementations",
-        "grade": "?",
+        "grade": 79,  # not verified
         "maxGrade": 100,
     },
     {
         "name": "Problem Set 7",
         "item": "Submitted Implementations",
-        "grade": "?",
+        "grade": 73,  # not verified
         "maxGrade": 100,
     },
     {
