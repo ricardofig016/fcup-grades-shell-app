@@ -44,7 +44,7 @@ evalComponents = [
     {
         "name": "Problem Set 8",
         "item": "Submitted Implementations",
-        "grade": "?",
+        "grade": 57,  # not verified
         "maxGrade": 100,
     },
     {
