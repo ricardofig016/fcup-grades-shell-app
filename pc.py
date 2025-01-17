@@ -26,25 +26,25 @@ evalComponents = [
     {
         "name": "Problem Set 5",
         "item": "Submitted Implementations",
-        "grade": 85,  # not verified
+        "grade": 85,
         "maxGrade": 100,
     },
     {
         "name": "Problem Set 6",
         "item": "Submitted Implementations",
-        "grade": 79,  # not verified
+        "grade": 79,
         "maxGrade": 100,
     },
     {
         "name": "Problem Set 7",
         "item": "Submitted Implementations",
-        "grade": 73,  # not verified
+        "grade": 84,
         "maxGrade": 100,
     },
     {
         "name": "Problem Set 8",
         "item": "Submitted Implementations",
-        "grade": 57,  # not verified
+        "grade": 57,
         "maxGrade": 100,
     },
     {
