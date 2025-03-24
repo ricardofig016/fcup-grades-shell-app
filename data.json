@@ -1,38 +1,71 @@
 [
   {
-    "names": ["Compiladores", "Compilers", "Comp"],
-    "module_name": "comp",
+    "names": ["Aprendizagem Computacional I", "Machine Learning I", "AC1", "ML1"],
+    "module_name": "ac1",
+    "year": 2,
+    "semester": 2,
+    "components": [
+      { "name": "Test 1", "grade": "?", "weight": 0.3 },
+      { "name": "Test 2", "grade": "?", "weight": 0.3 },
+      { "name": "Project", "grade": "?", "weight": 0.4 }
+    ]
+  },
+  {
+    "names": ["Arquitetura de Software", "Software Architecture", "ASW"],
+    "module_name": "asw",
     "year": 3,
-    "semester": 1
+    "semester": 2,
+    "components": [
+      { "name": "Test 1", "grade": "?", "weight": 0.1 },
+      { "name": "Test 2", "grade": "?", "weight": 0.25 },
+      { "name": "Test 3", "grade": "?", "weight": 0.25 },
+      { "name": "Project 1", "grade": 18, "weight": 0.1 },
+      { "name": "Project 2", "grade": "?", "weight": 0.15 },
+      { "name": "Project 3", "grade": "?", "weight": 0.15 }
+    ]
   },
   {
-    "names": ["Interacao Pessoa-Maquina", "Human-Computer Interaction", "IPM"],
-    "module_name": "ipm",
-    "year": 2,
-    "semester": 1
+    "names": ["Calculo II", "Calculus II", "C2"],
+    "module_name": "c2",
+    "year": 1,
+    "semester": 2,
+    "components": [
+      { "name": "Test 1", "grade": "?", "weight": 0.3 },
+      { "name": "Test 2", "grade": "?", "weight": 0.3 },
+      { "name": "Exam", "grade": "?", "weight": 0.4 }
+    ]
   },
   {
-    "names": ["Logica Computacional", "Computational Logic", "LC"],
-    "module_name": "lc",
-    "year": 2,
-    "semester": 1
-  },
-  {
-    "names": ["Programacao Competitiva", "Competitive Programming", "PC"],
-    "module_name": "pc",
-    "year": 2,
-    "semester": 1
-  },
-  {
-    "names": ["Redes de Comunicacao", "Communication Networks", "RC"],
-    "module_name": "rc",
+    "names": ["Computabilidade e Complexidade", "Computability and Complexity", "CC", "CCPLEX"],
+    "module_name": "ccplex",
     "year": 3,
-    "semester": 1
+    "semester": 2,
+    "components": [
+      { "name": "Test 1", "grade": "?", "weight": 0.5 },
+      { "name": "Test 2", "grade": "?", "weight": 0.5 }
+    ]
   },
   {
-    "names": ["Tecnologias Web", "Web Technologies", "TW"],
-    "module_name": "tw",
+    "names": ["Ciencia de Dados em Larga Escala", "Large Scale Data Science", "CDLE"],
+    "module_name": "cdle",
+    "year": 3,
+    "semester": 2,
+    "components": [
+      { "name": "Test 1", "grade": "?", "weight": 0.3 },
+      { "name": "Test 2", "grade": "?", "weight": 0.3 },
+      { "name": "Project", "grade": "?", "weight": 0.4 }
+    ]
+  },
+  {
+    "names": ["Seguranca e Privacidade", "Security and Privacy", "SP"],
+    "module_name": "sp",
     "year": 2,
-    "semester": 1
+    "semester": 2,
+    "components": [
+      { "name": "Exam", "grade": "?", "weight": 0.6 },
+      { "name": "Project 1", "grade": "?", "weight": 0.15 },
+      { "name": "Project 2", "grade": "?", "weight": 0.15 },
+      { "name": "Project 3", "grade": "?", "weight": 0.1 }
+    ]
   }
 ]

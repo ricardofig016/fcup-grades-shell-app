@@ -1,40 +1,6 @@
 import json
 from icecream import ic
 
-from comp import (
-    get_final_grade as comp_get_final_grade,
-    get_all_grades as comp_get_all_grades,
-)
-from ipm import (
-    get_final_grade as ipm_get_final_grade,
-    get_all_grades as ipm_get_all_grades,
-)
-from lc import (
-    get_final_grade as lc_get_final_grade,
-    get_all_grades as lc_get_all_grades,
-)
-from pc import (
-    get_final_grade as pc_get_final_grade,
-    get_all_grades as pc_get_all_grades,
-)
-from rc import (
-    get_final_grade as rc_get_final_grade,
-    get_all_grades as rc_get_all_grades,
-)
-from tw import (
-    get_final_grade as tw_get_final_grade,
-    get_all_grades as tw_get_all_grades,
-)
-
-grade_functions = {
-    "comp": [comp_get_final_grade, comp_get_all_grades],
-    "ipm": [ipm_get_final_grade, ipm_get_all_grades],
-    "lc": [lc_get_final_grade, lc_get_all_grades],
-    "pc": [pc_get_final_grade, pc_get_all_grades],
-    "rc": [rc_get_final_grade, rc_get_all_grades],
-    "tw": [tw_get_final_grade, tw_get_all_grades],
-}
-
 
 def get_data():
     with open("data.json", "r") as file:
@@ -51,13 +17,24 @@ def get_course_by_name(query, data):
 
 
 def get_final_grade(course):
-    if course["module_name"] in grade_functions:
-        return grade_functions[course["module_name"]][0]()
+    min_final = 0
+    max_final = 0
+    for c in course["components"]:
+        if c["grade"] != "?":
+            min_final += c["grade"] * c["weight"]
+            max_final += 20 * c["weight"]
+    min_final = round(min_final, 1)
+    max_final = round(max_final, 1)
+    perc = round(min_final * 100 / max_final, 1) if max_final != 0 else 0
+    return f"{min_final} / {max_final} ({perc}%)"
 
 
 def get_all_grades(course):
-    if course["module_name"] in grade_functions:
-        return grade_functions[course["module_name"]][1]()
+    string = ""
+    for c in course["components"]:
+        if c["grade"] != "?":
+            string += f"\t{c['name']}: {c['grade']} / 20\n"
+    return string
 
 
 def shell():
@@ -109,8 +86,10 @@ def shell():
             # > grades
             if len(command) == 1:
                 for course in data:
-                    print(course["names"][0] + ":")
-                    print(get_all_grades(course))
+                    grades_string = get_all_grades(course)
+                    if grades_string:
+                        print(course["names"][0] + ":")
+                        print(grades_string)
 
             # > grades <course_name>
             else:
@@ -118,8 +97,12 @@ def shell():
                 if not course:
                     print(f"Course {command[1]} not found.")
                 else:
-                    print(course["names"][0] + ":")
-                    print(get_all_grades(course))
+                    grades_string = get_all_grades(course)
+                    if grades_string:
+                        print(course["names"][0] + ":")
+                        print(grades_string)
+                    else:
+                        print(f"No grades available for {course["names"][0]}")
 
         elif command[0] == "final":
             # > final all
@@ -133,6 +116,8 @@ def shell():
                     print(f"Course {command[1]} not found.")
                 else:
                     print(f"{course['names'][0]}: {get_final_grade(course)}")
+            else:
+                print("Invalid command. Usage: final all | final <course_name>")
 
         else:
             print("Invalid command. Use 'help' to see available commands.")
