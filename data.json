@@ -17,7 +17,7 @@
     "semester": 2,
     "components": [
       { "name": "Test 1", "grade": 12, "weight": 0.1 },
-      { "name": "Test 2", "grade": "?", "weight": 0.25 },
+      { "name": "Test 2", "grade": 9.2, "weight": 0.25 },
       { "name": "Test 3", "grade": "?", "weight": 0.25 },
       { "name": "Project 1", "grade": 18, "weight": 0.1 },
       { "name": "Project 2", "grade": "?", "weight": 0.15 },
@@ -43,17 +43,6 @@
     "components": [
       { "name": "Test 1", "grade": "?", "weight": 0.5 },
       { "name": "Test 2", "grade": "?", "weight": 0.5 }
-    ]
-  },
-  {
-    "names": ["Ciencia de Dados em Larga Escala", "Large Scale Data Science", "CDLE"],
-    "module_name": "cdle",
-    "year": 3,
-    "semester": 2,
-    "components": [
-      { "name": "Test 1", "grade": "?", "weight": 0.3 },
-      { "name": "Test 2", "grade": "?", "weight": 0.3 },
-      { "name": "Project", "grade": "?", "weight": 0.4 }
     ]
   },
   {
