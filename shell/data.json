@@ -20,7 +20,7 @@
       { "name": "Test 2", "grade": 9.2, "weight": 0.25 },
       { "name": "Test 3", "grade": "?", "weight": 0.25 },
       { "name": "Project 1", "grade": 18, "weight": 0.1 },
-      { "name": "Project 2", "grade": "?", "weight": 0.15 },
+      { "name": "Project 2", "grade": 14, "weight": 0.15 },
       { "name": "Project 3", "grade": "?", "weight": 0.15 }
     ]
   },
