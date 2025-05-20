@@ -1,2 +1,4 @@
 __pycache__
-grades.pdf
+
+# censor student names and grades
+*.pdf 
