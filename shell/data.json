@@ -31,7 +31,7 @@
     "semester": 2,
     "components": [
       { "name": "Test 1", "grade": 12.67, "weight": 0.3 },
-      { "name": "Test 2", "grade": "?", "weight": 0.3 },
+      { "name": "Test 2", "grade": 14.67, "weight": 0.3 },
       { "name": "Exam", "grade": "?", "weight": 0.4 }
     ]
   },
@@ -41,7 +41,7 @@
     "year": 3,
     "semester": 2,
     "components": [
-      { "name": "Test 1", "grade": "?", "weight": 0.5 },
+      { "name": "Test 1", "grade": 11.95, "weight": 0.5 },
       { "name": "Test 2", "grade": "?", "weight": 0.5 }
     ]
   },
