@@ -1,9 +1,14 @@
 import json
+import os
 from icecream import ic
 
 
 def get_data():
-    with open("data.json", "r") as file:
+    curr_dir = os.path.dirname(os.path.abspath(__file__))
+    if os.path.basename(curr_dir) == "grades":
+        curr_dir = os.path.join(curr_dir, "shell")
+    data_path = os.path.join(curr_dir, "data.json")
+    with open(data_path, "r") as file:
         data = json.load(file)
     return data
 
