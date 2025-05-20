@@ -52,7 +52,7 @@
     "semester": 2,
     "components": [
       { "name": "Exam", "grade": "?", "weight": 0.6 },
-      { "name": "Project 1", "grade": "?", "weight": 0.15 },
+      { "name": "Project 1", "grade": 14.43, "weight": 0.15 },
       { "name": "Project 2", "grade": "?", "weight": 0.15 },
       { "name": "Project 3", "grade": "?", "weight": 0.1 }
     ]
