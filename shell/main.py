@@ -43,7 +43,6 @@ def get_all_grades(course):
 
 
 def shell():
-    data = get_data()
     while True:
         try:
             commandStr = input("> ")
@@ -52,6 +51,9 @@ def shell():
 
         commandStr = commandStr.strip().lower()
         command = commandStr.split(" ")
+
+        # refresh data after every query
+        data = get_data()
 
         if not command[0]:
             continue
