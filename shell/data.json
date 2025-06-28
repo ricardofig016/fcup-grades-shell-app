@@ -6,8 +6,8 @@
     "semester": 2,
     "components": [
       { "name": "Test 1", "grade": 11.9, "weight": 0.3 },
-      { "name": "Test 2", "grade": "?", "weight": 0.3 },
-      { "name": "Project", "grade": "?", "weight": 0.4 }
+      { "name": "Test 2", "grade": 14.6, "weight": 0.3 },
+      { "name": "Project", "grade": 11.4, "weight": 0.4 }
     ]
   },
   {
@@ -42,7 +42,7 @@
     "semester": 2,
     "components": [
       { "name": "Test 1", "grade": 11.95, "weight": 0.5 },
-      { "name": "Test 2", "grade": "?", "weight": 0.5 }
+      { "name": "Test 2", "grade": 18, "weight": 0.5 }
     ]
   },
   {
@@ -51,7 +51,7 @@
     "year": 2,
     "semester": 2,
     "components": [
-      { "name": "Exam", "grade": "?", "weight": 0.6 },
+      { "name": "Exam", "grade": 14.84, "weight": 0.6 },
       { "name": "Project 1", "grade": 14.42, "weight": 0.15 },
       { "name": "Project 2", "grade": 10.6, "weight": 0.15 },
       { "name": "Project 3", "grade": 16.4, "weight": 0.1 }
