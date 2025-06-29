@@ -52,7 +52,7 @@ def pdf_to_csv(data_dir, file_name, column):
     print(f"Successfully extracted numeric grades to {csv_file_path}.")
 
 
-def print_and_plot_stats(df):
+def print_and_plot_stats(df, my_grade=0.0):
     grades = df["grades"]
     print("\tCount:", grades.count())
     print("\tMean:", grades.mean())
@@ -101,25 +101,31 @@ def print_and_plot_stats(df):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 5:
-        print(
-            "Usage: > python main.py <pdf_file_name> <column_number> <my_grade> <max_grade>"
-        )
-        print(
-            "\tpdf_file_name: The name of the PDF file to process, stored in data/ directory."
-        )
-        print(
-            "\tcolumn_number: The index of the column to extract grades from (0-based)."
-        )
-        print("\tmy_grade: Your grade to be highlighted in the plots.")
-        print("\tmax_grade: The maximum possible grade.")
-        print("Example: > python main.py test1.pdf 2 11.95 20")
-        sys.exit(1)
-
-    pdf_file_name = sys.argv[1]
-    column_number = int(sys.argv[2])
-    my_grade = float(sys.argv[3])
-    max_grade = float(sys.argv[4])
+    parser = argparse.ArgumentParser(
+        description="Process grades from a PDF file or use an existing CSV file."
+    )
+    parser.add_argument(
+        "--csv",
+        type=str,
+        help="Provide a CSV file name to skip PDF processing.",
+        default=None,
+    )
+    parser.add_argument(
+        "pdf_file_name",
+        nargs="?",
+        help="PDF file name to process (required if --csv is not used).",
+    )
+    parser.add_argument(
+        "column_number",
+        nargs="?",
+        type=int,
+        help="Column index (0-based) to extract grades from (required if --csv is not used).",
+    )
+    parser.add_argument(
+        "my_grade", type=float, help="Your grade to highlight in the plots."
+    )
+    parser.add_argument("max_grade", type=float, help="The maximum possible grade.")
+    args = parser.parse_args()
 
     data_dir = os.path.dirname(os.path.abspath(__file__))
     if os.path.basename(data_dir) == "grades":
@@ -129,20 +135,31 @@ if __name__ == "__main__":
         print(f"Error: Directory {data_dir} does not exist.")
         sys.exit(1)
 
-    pdf_to_csv(data_dir, pdf_file_name, column_number)
+    if args.csv:
+        csv_file_name = args.csv
+    else:
+        if args.pdf_file_name is None or args.column_number is None:
+            parser.error(
+                "For PDF processing, both pdf_file_name and column_number are required."
+            )
+        pdf_to_csv(data_dir, args.pdf_file_name, args.column_number)
+        csv_file_name = args.pdf_file_name.replace(".pdf", ".csv")
 
-    csv_file_name = pdf_file_name.replace(".pdf", ".csv")
     grades_path = os.path.join(data_dir, csv_file_name)
     df = pd.read_csv(grades_path)
 
     print("General stats:")
-    print_and_plot_stats(df)
+    print_and_plot_stats(df, my_grade=args.my_grade)
 
     print("\nStats for grades >= 10%:")
-    print_and_plot_stats(df[df["grades"] * 100 / max_grade >= 10])
+    print_and_plot_stats(
+        df[df["grades"] * 100 / args.max_grade >= 10], my_grade=args.my_grade
+    )
 
     print("\nStats for grades >= 45%:")
-    print_and_plot_stats(df[df["grades"] * 100 / max_grade >= 45])
+    print_and_plot_stats(
+        df[df["grades"] * 100 / args.max_grade >= 45], my_grade=args.my_grade
+    )
 
     print("\nOrdered Unique Grades (highest to lowest):")
     unique_counts = df.value_counts().sort_index(ascending=False)
