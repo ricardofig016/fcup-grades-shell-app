@@ -42,7 +42,7 @@
     "semester": 2,
     "components": [
       { "name": "Test 1", "grade": 11.95, "weight": 0.5 },
-      { "name": "Test 2", "grade": 18, "weight": 0.5 }
+      { "name": "Test 2", "grade": 17.025, "weight": 0.5 }
     ]
   },
   {
